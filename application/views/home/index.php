@@ -145,7 +145,6 @@
         $('.modal-title').text('Edit User');
         $('#formUser')[0].reset();
         $('#save').hide();
-        $('#edit').show();
         $.ajax({
             type: "GET",
             url: "api/User/show/" + id,
@@ -158,6 +157,8 @@
                 document.getElementById('modal_footer').innerHTML = '' +
                     '<button type="button" id="edit" class="btn btn-primary" onclick=edit("' + user.id + '")>Edit</button>' +
                     '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>';
+
+                $('#edit').show();
             },
         });
     }

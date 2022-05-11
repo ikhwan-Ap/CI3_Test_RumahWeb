@@ -196,7 +196,7 @@
                             html: `Anda Berhasil Login`,
                         }).then((result) => {
                             if (result.value) {
-                                window.location.replace("<?= base_url('home/index'); ?>")
+                                window.location.replace("<?= base_url('home'); ?>")
                             }
                         })
                     }
