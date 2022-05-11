@@ -116,7 +116,7 @@
                         '<span class="ion ion-ios-trash" data-pack="ios" data-tags="delete, remove, dispose, waste, basket, dump, kill">' +
                         '</span>' +
                         '</button>' +
-                        '<button class="btn btn-danger" onClick="btnDel(' + item.id + ')">' + 'Delete' + '</button>' +
+                        '<button class="btn btn-danger" id="btnDel" onClick="btnDel(' + item.id + ')">' + 'Delete' + '</button>' +
                         '</td>' +
                         '</tr>';
 
@@ -268,6 +268,11 @@
                             ).then((result) => {
                                 if (result.value) {
                                     window.location.reload();
+                                    var btn = $('#btnDel');
+                                    btn.prop('disabled', true);
+                                    setTimeout(function() {
+                                        btn.prop('disabled', false);
+                                    }, 3000);
                                 }
                             })
                         }
