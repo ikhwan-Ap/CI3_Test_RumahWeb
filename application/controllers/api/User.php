@@ -142,7 +142,7 @@ class User extends RestController
                     [
                         'field' => 'email',
                         'label' => 'Email',
-                        'rules' => 'valid_email|required'
+                        'rules' => 'valid_email|required|callback_valid_email'
                     ],
                     [
                         'field' => 'birthdate',
@@ -181,7 +181,7 @@ class User extends RestController
                     [
                         'field' => 'email',
                         'label' => 'Email',
-                        'rules' => 'valid_email|required'
+                        'rules' => 'callback_valid_email|required'
                     ],
                     [
                         'field' => 'birthdate',
@@ -268,6 +268,22 @@ class User extends RestController
         if ($birthdate < 17) {
             $this->form_validation->set_message('valid_birthDate', 'The {field} Old Must Up To 17 Years Old.');
 
+            return FALSE;
+        }
+        return TRUE;
+    }
+    public function valid_email($email = '')
+    {
+        $regex_email = '/@rumahweb.co.id/';
+        $email = trim($email);
+        if (empty($email)) {
+            $this->form_validation->set_message('valid_email', 'The {field} field is required.');
+            return FALSE;
+        }
+
+
+        if (preg_match_all($regex_email, $email) < 1) {
+            $this->form_validation->set_message('valid_email', 'The {field} Email Must @rumahweb.co.id.');
             return FALSE;
         }
         return TRUE;
