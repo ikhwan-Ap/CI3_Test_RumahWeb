@@ -91,7 +91,7 @@ class User extends RestController
                 [
                     'field' => 'email',
                     'label' => 'Email',
-                    'rules' => 'valid_email|required'
+                    'rules' => 'callback_valid_email|required'
                 ],
 
                 'email' => [
