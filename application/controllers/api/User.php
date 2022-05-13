@@ -215,7 +215,6 @@ class User extends RestController
                 }
             }
         }
-        // return $this->response(['message' => 'Not Data Find With Id ' . $id)], 404);
     }
 
     public function valid_password($password = '')

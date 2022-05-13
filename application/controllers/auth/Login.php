@@ -28,7 +28,7 @@ class login extends CI_Controller
 
         if ($this->input->post('email') != null  && $this->input->post('password') != null) {
             for ($i = 0; $i < count($users); $i++) {
-                if ($users[$i]->email == $this->input->post('email')) {
+                if ($users[$i]->email === $this->input->post('email')) {
                     if ($users[$i]->password == $this->input->post('password')) {
                         $session_data = array(
                             'email' => $this->input->post('email'),
@@ -42,9 +42,6 @@ class login extends CI_Controller
                         $data = ['error' => 'Wrong Password / Email'];
                         echo json_encode($data);
                     }
-                } else {
-                    $data = ['error' => 'Wrong Password / Email'];
-                    echo json_encode($data);
                 }
             }
         } else {

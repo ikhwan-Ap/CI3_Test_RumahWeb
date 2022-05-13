@@ -1,14 +1,14 @@
 [
     {
         "id": "1",
-        "email": "demo1@rumahweb.co.id",
-        "password": "demo",
-        "birthdate": "18"
+        "email": "demo@rumahweb.co.id",
+        "password": "J@k@rta12345",
+        "birthdate": "20"
     },
     {
-        "id": "2",
-        "email": "demo2@rumahweb.co.id",
-        "password": "demo",
-        "birthdate": "18"
+        "id": 2,
+        "email": "ikwanuye@rumahweb.co.id",
+        "password": "J@k@rta12345",
+        "birthdate": "20"
     }
 ]
